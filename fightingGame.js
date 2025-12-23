@@ -85,11 +85,11 @@ const Dracaena = {
 			}
 		},
 		takeHit:{
-			imageSrc:'dracSprites/dracTake hit.png',
+			imageSrc:'dracSprites/dracTakeHit.png',
 			framesMax:3,
 			framesHold:11,
 			scale:.43,
-			backwardsImg:'dracSprites/dracTake Hitbackwards.png',
+			backwardsImg:'dracSprites/dracTakeHitbackwards.png',
 			temp:null,
 			offset:{
 				x:60,
@@ -203,11 +203,11 @@ const Richard = {
 			}
 		},
 		takeHit:{
-			imageSrc:'richardSprites/richardTake hit.png',
+			imageSrc:'richardSprites/richardTakeHit.png',
 			framesMax:5,
 			framesHold:4,
 			scale:.8,
-			backwardsImg:'richardSprites/richardTake hitbackwards.png',
+			backwardsImg:'richardSprites/richardTakeHitbackwards.png',
 			temp:null,
 			offset:{
 				x:70,
