@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html> <link rel="stylesheet" href="styless.css"> <link rel="icon" href="penisforeskinicon.jpg"> 
+<title>Port Headband</title>
+<head>
+<div class="topnav">
+	<img src="penisforeskinicon.jpg" alt="penisforeskin" id="bestimage" style='animation-name:anime; animation-duration: 1s;animation-iteration-count: infinite;'onclick="new Audio('killyourself.mp3').play()">
+	<a href="programs.html" class="hoverable active">Programs</a>
+	<a href="reviews.html" class="hoverable">Reviews</a>
+    <a href="games.html" class="hoverable">Games</a>
+    <a href="index.html" class="hoverable">Home</a>
+</div>
+<div class="tails">
+	
+	<canvas id="canvas" width="200" height="500"></canvas>
+</div>
+<script>
+	let canvas=document.getElementById('canvas')
+	let c = canvas.getContext('2d')
+	c.strokeStyle = "black";
+	c.lineWidth=25
+	c.lineCap = 'round';
+	let start=-20
+	let reverse=true;
+	function draw(){
+		c.clearRect(0, 0, canvas.width, canvas.height);
+		c.beginPath()
+		c.moveTo(0,0)
+		let last=[50,0]
+		for (let i=start-10,j=0;i<400+start;i+=10,j++) {
+			c.moveTo(Math.sin(i/12)*6+50+j,i-start);
+			c.lineTo(last[0],last[1])
+			last[0]=Math.sin(i/12)*6+50
+			last[1]=i-start
+			c.stroke();
+		}
+		last[0]=70
+		last[1]=0
+		for (let i=start-10,j=0,x=0;i<350+start;i+=10,j+=2,x++) {
+			c.moveTo(Math.sin(i/12)*4+70+j+x,i-start);
+			c.lineTo(last[0],last[1])
+			last[0]=Math.sin(i/12)*4+70+j
+			last[1]=i-start
+			c.stroke();
+		}
+		c.closePath()
+		//c.clearRect(0, 0, canvas.width, canvas.height);
+		if (!reverse) start++
+		else start--;
+		if (start==0) reverse=true
+		else if (start==-20) reverse=false
+		window.requestAnimationFrame(draw)
+		//c.clearRect(0, 0, canvas.width, canvas.height);
+	}
+	/*for (let i=-10;i<0;i++) {
+		draw(i)
+		if (i==-1) i=-10
+	}*/
+	window.requestAnimationFrame(draw)
+</script>
+<ul class="other-pages">
+</ul>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h2 class="labeler">messaging app</h2>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<img src="messagingApp.png" style=" display:block;margin:0 auto 0 auto; width:1100px; border-right-width: 20px;border-left-width: 20px; border-left-style: solid; border-right-style: solid;border-color: #7d8cbb"  />
+<br>
+<br>
+<video style="display:block;margin:0 auto 0 auto;border-left-width: 20px; border-left-style: solid; border-right-style: solid; border-right-width: 20px; 
+border-color: #7d8cbb;min-width:1100px; width: 700px" autoplay loop muted>
+	<source src="messagingAppWorking.mp4" type="video/mp4" />
+	Your browser does not support the video tag.
+  </video>
+<br>
+<br>
+<br>
+<br>
+<p class="blurbs">
+    This is a messaging app I built in C. The premise of the project was to create a simple messenger, and I learned a lot from this project, including TCP/UDP protocols,
+    socket programming, network programming, and just generally the basics of how to make my own messaging app like account management. Everything is done serverside,
+    the user simply sends their login info for the server to verify, as well as any messages they might want to send. It's all done through the server, as it would be
+    dangerous to give the user side access to anything. I used winsock for the socket library, as I felt that would be a good start. I shamefully used a file to store
+    account information instead of a database like MySQL. Might be something to work on in the future if I ever revisit this project. Below is a github link to both the 
+    code for the messenger itself, and the server. 
+</p>
+<br>
+<br>
+<div style="display: flex; margin: 0 auto 0 auto;justify-content: center;">
+    <a href="https://github.com/Snambo1/messaging-app">
+    <img src="github.png" style="width:70px; border-radius: 10px;margin:0 2rem;" class="hoverable"/>
+    </a>
+    <br>
+    <a href="https://github.com/Snambo1/messaging-app-server">
+    <img src="github.png" style="width:70px; border-radius: 10px;margin:0 2rem;" class="hoverable"/>
+    </a>
+</div>
+<br>
+<br>
+
+<h2 class="labeler">fighting game in c++</h2>
+<br>
+<br>
+<br>
+<video style="display:block;margin:0 auto 0 auto;border-left-width: 20px; border-left-style: solid; border-right-style: solid; border-right-width: 20px; 
+border-color: #7d8cbb;min-width:1100px; width: 700px" autoplay loop muted>
+	<source src="fgClip.mp4" type="video/mp4" />
+	Your browser does not support the video tag.
+  </video>
+<br>
+<br>
+<br>
+<p class="blurbs">
+    This is fighting game, although this was written in C++, the JavaScript version is playable on the "Games" tab. This was written in C++ with SDL2
+    It's basically the same as the one on the "Games" tab, however to give you the rundown, it has its own animation system, a proper timer, character select, and all the basic
+    mechanisms behind fighting games. This was fun to make as I had to work with my friends to implement the sprite work and characters. Some days I muse on improving on it and 
+    publishing it as a full-fledged game, but that's perhaps for another time. The github link is below
+</p>
+<br>
+<br>
+<br>
+<div style="display: flex; margin: 0 auto 0 auto;justify-content: center;">
+    <a href="https://github.com/Snambo1/fighting-game">
+    <img src="github.png" style="width:70px; border-radius: 10px;margin:0 2rem;" class="hoverable"/>
+    </a>
+</div>
+<br>
+<br>
+<br>
+<br>
+<h2 class="labeler">Calculator</h2>
+<br>
+<br>
+<br>
+<img src="calculator.jpeg" style=" display:block;margin:0 auto 0 auto; width:800px; border-right-width: 20px;border-left-width: 20px; border-left-style: solid; border-right-style: solid;border-color: #e2d7c5"  />
+<br>
+<br>
+<br>
+<p class="blurbs">
+    This is a calculator I made using arduino. Yes a physical calculator I built. I used diodes to make a binary input system to save pin space. This is more of a foray
+    into hardware and more hardware based projects. Below is a photo of the calculator working, I was pretty proud of myself when it all came together even though a calculator 
+    has technically been done before. The github link is below, and the code for this wasn't nearly as long.
+</p>
+<br>
+<br>
+<br>
+<br>
+<div style="display: flex; margin: 0 auto 0 auto;justify-content: center;">
+    <a href="https://github.com/Snambo1/calculator-arduino">
+    <img src="github.png" style="width:70px; border-radius: 10px;margin:0 2rem;" class="hoverable"/>
+    </a>
+</div>
+<br>
+<br>
+<br>
+<br>
+<h2 class="labeler">3d third person shooter</h2>
+<br>
+<br>
+<br>
+<video style="display:block;margin:0 auto 0 auto;border-left-width: 20px; border-left-style: solid; border-right-style: solid; border-right-width: 20px; 
+border-color: #7d8cbb;min-width:1100px; width: 700px" autoplay loop muted>
+	<source src="3dgame.mp4" type="video/mp4" />
+	Your browser does not support the video tag.
+  </video>
+<br>
+<br>
+<br>
+<p class="blurbs">
+    This is a full-on 3D third person shooter I built using assembly-script. This was a really fun project, and the antithesis to the age old question in math classes of
+    "When will we ever use this?". Trigonometry and certain parts of algebra 2 and pre calculus were <b>integral</b> (get it?) to bringing to life this project. Despite
+    often feeling like a euclidean hell I was trapped in, I had tremendous fun with this project, and you can actually play it for yourself right <a href="https://www.d1ag0n.com/ng/program/gallery">here</a>.
+    it's dubbed 3d adventures. As always the code for it is right below
+</p>
+<br>
+<br>
+<br>
+<br>
+<div style="display: flex; margin: 0 auto 0 auto;justify-content: center;">
+    <a href="https://github.com/Snambo1/3dgame">
+    <img src="github.png" style="width:70px; border-radius: 10px;margin:0 2rem;" class="hoverable"/>
+    </a>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="foot"><img src="penisforeskinicon.jpg" alt="penisforeskin" id="bestimage" style='animation-name:anime; animation-duration: 1s;animation-iteration-count: infinite;
+	'onclick=""></div>
+<style>
+      pre.scroll {
+      	margin: 0 auto 0 auto;
+        background-color: #fed9ff;
+        width: 1300px;
+        height: 300px;
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+    </style>
+</body>
+</html>
